@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saikoro</title>
+   
+</head>
+
+<body>
+    <button onclick="Saikoro();">　サイコロを振る　</button class="md:ml-auto">
+        <p><img id="sainome" src="1.jpg" width="100" height="100" /></p>
+        <p id="kekka"></p>
+    
+        <p><img id="sainome2" src="1.jpg" width="100" height="100" /></p>
+        <p id="kekka2"></p>
+    
+        <p><img id="sainome3" src="1.jpg" width="100" height="100" /></p>
+        <p id="kekka3"></p>
+
+        <input type="button" id="sugoroku2" value="結果" >
+        <p style="font-size: 24px;" id="edit_answerarea"></p>
+         
+        
+       
+    <script>
+
+        function Saikoro() {
+            let saikoro1 = Math.floor( Math.random() * 6) +1;
+            document.getElementById("kekka").innerHTML = saikoro1;
+            document.getElementById("sainome").src= saikoro1 + ".jpg";
+            const q1 = document.getElementById("kekka").innerHTML = saikoro1;
+
+            let saikoro2 = Math.floor( Math.random() * 6) +1;
+            document.getElementById("kekka2").innerHTML = saikoro2;
+            document.getElementById("sainome2").src= saikoro2 + ".jpg";
+            const q2 = document.getElementById("kekka2").innerHTML = saikoro2;
+
+            let saikoro3 = Math.floor( Math.random() * 6) +1;
+            document.getElementById("kekka3").innerHTML = saikoro3;
+            document.getElementById("sainome3").src= saikoro3 + ".jpg";
+            const q3 = document.getElementById("kekka3").innerHTML = saikoro3;
+        }
+
+       document.getElementById("sugoroku2").onclick=function()　{
+        let answer = document.getElementById("edit_answerarea");
+        const collect = q1 + q2 + q3;
+
+        if (answer == collect) {
+            alert(`おめでとう`);
+        }else {
+            alert(`残念`);
+        }
+        }
+        
+    </script>
+
+   
+</body>
+</html>
